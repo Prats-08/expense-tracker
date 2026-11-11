@@ -2,9 +2,11 @@
 name = "expense-tracker"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
 pythonpath = ["src"]
-addopts = "-v"
+asyncio_mode = "auto"
+testpaths = ["tests"]

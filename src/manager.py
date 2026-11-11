@@ -1,4 +1,5 @@
 import logging
+from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 
@@ -8,16 +9,17 @@ from storage import JsonStorage, StorageError
 logger = logging.getLogger(__name__)
 
 DEFAULT_PATH = Path(__file__).resolve().parent.parent / "data" / "expenses.json"
+DATE_FORMAT = "%Y-%m-%d"
 
 
-def format_expense(e) -> str:
+def format_expense(e: Expense | dict) -> str:
     """e can be an Expense or a dict loaded from JSON."""
-    get = e.get if isinstance(e, dict) else lambda k: getattr(e, k)
+    d = e if isinstance(e, dict) else asdict(e)
     return (
-        f"Amount: {get('amount')}, "
-        f"Category: {get('category')}, "
-        f"Description: {get('description')}, "
-        f"Date: {get('date')}"
+        f"Amount: {d['amount']}, "
+        f"Category: {d['category']}, "
+        f"Description: {d['description']}, "
+        f"Date: {d['date']}"
     )
 
 
@@ -27,6 +29,17 @@ class ExpenseManager:
         self.storage = storage or JsonStorage(DEFAULT_PATH)
         self.expenses: list[Expense] = []
         logger.debug("ExpenseManager initialised, data file: %s", self.storage.filepath)
+
+    @staticmethod
+    def _validate(expense: Expense) -> None:
+        """Single source of truth for what a valid expense is.
+        Raises ValueError with a user-friendly message."""
+        if expense.amount <= 0:
+            raise ValueError("Amount must be greater than zero.")
+        try:
+            datetime.strptime(expense.date, DATE_FORMAT)
+        except ValueError:
+            raise ValueError("Date must be in YYYY-MM-DD format.") from None
 
     async def load(self) -> None:
         """Load previously saved expenses into memory. Call once at startup."""
@@ -39,21 +52,19 @@ class ExpenseManager:
         loaded: list[Expense] = []
         for item in raw:
             try:
-                loaded.append(Expense(**item))
-            except TypeError:
+                expense = Expense(**item)
+                self._validate(expense)       
+            except (TypeError, ValueError):
                 logger.warning("Skipping malformed record: %r", item)
+                continue
+            loaded.append(expense)
+
         self.expenses = loaded
         print(f"Loaded {len(loaded)} saved expenses.")
 
     def add_expense(self, expense: Expense) -> None:
         """Validate and add. Raises ValueError with a user-friendly message."""
-        if expense.amount <= 0:
-            raise ValueError("Amount must be greater than zero.")
-        try:
-            datetime.strptime(expense.date, "%Y-%m-%d")
-        except ValueError:
-            raise ValueError("Date must be in YYYY-MM-DD format.") from None
-
+        self._validate(expense)
         self.expenses.append(expense)
         logger.info(
             "Expense added: amount=%s category=%s date=%s (total in memory: %d)",
@@ -71,7 +82,7 @@ class ExpenseManager:
             print(format_expense(expense))
 
     async def save_expenses_to_file(self) -> None:
-        snapshot = [e.__dict__.copy() for e in self.expenses]
+        snapshot = [asdict(e) for e in self.expenses]
         try:
             await self.storage.save(snapshot)
         except StorageError as e:

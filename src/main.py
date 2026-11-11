@@ -85,7 +85,7 @@ async def main():
             choice = int(input(MENU))   
         except ValueError:
             logger.warning("Non-numeric menu choice entered")
-            print("Please enter a number from 1 to 5.")
+            print("Please enter a number from 1 to 6.")
             continue
 
         logger.debug("Menu choice selected: %d", choice)
