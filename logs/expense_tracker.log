@@ -1,0 +1,8 @@
+2026-11-11 10:20:36,351 | INFO     | __main__:79 | Expense tracker started
+2026-11-11 10:20:36,352 | DEBUG    | manager:29 | ExpenseManager initialised, data file: D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 10:20:36,365 | INFO     | storage:47 | Loaded 3 records from D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 10:20:38,232 | DEBUG    | __main__:91 | Menu choice selected: 5
+2026-11-11 10:21:06,558 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 10:21:47,477 | INFO     | manager:58 | Expense added: amount=1.0 category=Rent date=2026-11-01 (total in memory: 4)
+2026-11-11 10:21:51,863 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 10:22:18,073 | INFO     | __main__:138 | Interrupted by user (Ctrl+C)

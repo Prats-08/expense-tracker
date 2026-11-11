@@ -7,3 +7,14 @@ class Expense:
     category: str
     description: str
     date: date
+
+CATEGORIES = (
+    "Food",
+    "Transport",
+    "Rent",
+    "Utilities",
+    "Shopping",
+    "Health",
+    "Entertainment",
+    "Other",
+)

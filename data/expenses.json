@@ -4,5 +4,17 @@
         "category": "Food",
         "description": "Chocolates from blinkit",
         "date": "2026-11-2"
+    },
+    {
+        "amount": 500.0,
+        "category": "Food",
+        "description": "Momo",
+        "date": "2026-11-9"
+    },
+    {
+        "amount": 600.0,
+        "category": "Transport",
+        "description": "bus to office",
+        "date": "2026-11-1"
     }
 ]
