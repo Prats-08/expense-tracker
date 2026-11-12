@@ -40,7 +40,6 @@ def setup_logging():
     root.addHandler(handler)
 
 def choose_category() -> str | None:
-    """Numbered picker. Returns the chosen category, or None if cancelled."""
     while True:
         print("\nSelect a category:")
         for i, name in enumerate(CATEGORIES, start=1):

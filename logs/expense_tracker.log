@@ -6,3 +6,43 @@
 2026-11-11 10:21:47,477 | INFO     | manager:58 | Expense added: amount=1.0 category=Rent date=2026-11-01 (total in memory: 4)
 2026-11-11 10:21:51,863 | DEBUG    | __main__:91 | Menu choice selected: 1
 2026-11-11 10:22:18,073 | INFO     | __main__:138 | Interrupted by user (Ctrl+C)
+2026-11-11 22:58:05,569 | INFO     | __main__:79 | Expense tracker started
+2026-11-11 22:58:05,570 | DEBUG    | manager:31 | ExpenseManager initialised, data file: D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:58:05,590 | INFO     | storage:47 | Loaded 3 records from D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:58:13,223 | DEBUG    | __main__:91 | Menu choice selected: 2
+2026-11-11 22:58:13,224 | DEBUG    | manager:80 | Displaying 3 in-memory expenses
+2026-11-11 22:58:38,081 | DEBUG    | __main__:91 | Menu choice selected: 6
+2026-11-11 22:58:38,082 | INFO     | __main__:126 | Expense tracker exiting normally
+2026-11-11 22:58:57,891 | INFO     | __main__:79 | Expense tracker started
+2026-11-11 22:58:57,892 | DEBUG    | manager:31 | ExpenseManager initialised, data file: D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:58:57,903 | INFO     | storage:47 | Loaded 3 records from D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:59:00,654 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 22:59:37,416 | INFO     | manager:69 | Expense added: amount=1000.0 category=Utilities date=2026-11-11 (total in memory: 4)
+2026-11-11 22:59:41,721 | DEBUG    | __main__:91 | Menu choice selected: 4
+2026-11-11 22:59:41,748 | INFO     | storage:57 | Saved 4 records to D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:59:43,882 | DEBUG    | __main__:91 | Menu choice selected: 3
+2026-11-11 22:59:43,893 | INFO     | storage:47 | Loaded 4 records from D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 22:59:51,097 | DEBUG    | __main__:91 | Menu choice selected: 5
+2026-11-11 23:01:07,321 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 23:01:39,852 | INFO     | manager:69 | Expense added: amount=6000.0 category=Rent date=2026-11-01 (total in memory: 5)
+2026-11-11 23:01:46,046 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 23:02:12,253 | INFO     | manager:69 | Expense added: amount=300.0 category=Entertainment date=2026-10-20 (total in memory: 6)
+2026-11-11 23:02:16,968 | DEBUG    | __main__:91 | Menu choice selected: 1
+2026-11-11 23:02:38,598 | INFO     | manager:69 | Expense added: amount=200.0 category=Entertainment date=2026-11-01 (total in memory: 7)
+2026-11-11 23:02:44,685 | DEBUG    | __main__:91 | Menu choice selected: 4
+2026-11-11 23:02:44,700 | INFO     | storage:57 | Saved 7 records to D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 23:02:47,242 | DEBUG    | __main__:91 | Menu choice selected: 2
+2026-11-11 23:02:47,242 | DEBUG    | manager:80 | Displaying 7 in-memory expenses
+2026-11-11 23:02:55,247 | DEBUG    | __main__:91 | Menu choice selected: 5
+2026-11-11 23:03:25,700 | DEBUG    | __main__:91 | Menu choice selected: 6
+2026-11-11 23:03:25,701 | INFO     | __main__:126 | Expense tracker exiting normally
+2026-11-11 23:14:21,606 | INFO     | __main__:78 | Expense tracker started
+2026-11-11 23:14:21,607 | DEBUG    | manager:31 | ExpenseManager initialised, data file: D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 23:14:21,620 | INFO     | storage:47 | Loaded 7 records from D:\Practice\Python\Expense Tracker\expense-tracker\data\expenses.json
+2026-11-11 23:14:28,415 | DEBUG    | __main__:90 | Menu choice selected: 1
+2026-11-11 23:46:42,899 | INFO     | __main__:78 | Expense tracker started
+2026-11-11 23:46:42,901 | DEBUG    | manager:30 | ExpenseManager initialised, data file: D:\Practice\Python\Mini-Projects\expense-tracker\data\expenses.json
+2026-11-11 23:46:42,920 | INFO     | storage:47 | Loaded 7 records from D:\Practice\Python\Mini-Projects\expense-tracker\data\expenses.json
+2026-11-11 23:46:46,983 | DEBUG    | __main__:90 | Menu choice selected: 5
+2026-11-11 23:46:55,976 | DEBUG    | __main__:90 | Menu choice selected: 6
+2026-11-11 23:46:55,976 | INFO     | __main__:125 | Expense tracker exiting normally

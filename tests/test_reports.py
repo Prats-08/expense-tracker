@@ -22,7 +22,6 @@ def test_total_of_empty_is_zero():
     assert Report([]).total() == 0
 
 
-# ---------- by_category ----------
 
 def test_by_category_sums_and_sorts_descending(sample):
     result = Report(sample).by_category()
@@ -84,22 +83,6 @@ def test_top_expenses_does_not_reorder_original_list(sample):
     before = list(sample)
     Report(sample).top_expenses(2)
     assert sample == before
-
-
-
-def test_for_month_filters_expenses(sample):
-    nov = Report(sample).for_month("2026-11")
-    assert len(nov.expenses) == 2
-    assert nov.total() == 300.56
-
-
-def test_for_month_can_be_chained(sample):
-    assert Report(sample).for_month("2026-10").by_category()["Rent"] == 900
-
-
-def test_for_month_with_no_matches_is_empty(sample):
-    assert Report(sample).for_month("1999-01").expenses == []
-
 
 def test_average_per_day_over_date_span():
     expenses = [

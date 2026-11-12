@@ -13,7 +13,6 @@ DATE_FORMAT = "%Y-%m-%d"
 
 
 def format_expense(e: Expense | dict) -> str:
-    """e can be an Expense or a dict loaded from JSON."""
     d = e if isinstance(e, dict) else asdict(e)
     return (
         f"Amount: {d['amount']}, "
@@ -32,8 +31,6 @@ class ExpenseManager:
 
     @staticmethod
     def _validate(expense: Expense) -> None:
-        """Single source of truth for what a valid expense is.
-        Raises ValueError with a user-friendly message."""
         if expense.amount <= 0:
             raise ValueError("Amount must be greater than zero.")
         try:
@@ -42,7 +39,6 @@ class ExpenseManager:
             raise ValueError("Date must be in YYYY-MM-DD format.") from None
 
     async def load(self) -> None:
-        """Load previously saved expenses into memory. Call once at startup."""
         try:
             raw = await self.storage.load()
         except StorageError as e:
@@ -63,7 +59,6 @@ class ExpenseManager:
         print(f"Loaded {len(loaded)} saved expenses.")
 
     def add_expense(self, expense: Expense) -> None:
-        """Validate and add. Raises ValueError with a user-friendly message."""
         self._validate(expense)
         self.expenses.append(expense)
         logger.info(
@@ -91,7 +86,6 @@ class ExpenseManager:
         print("Expenses saved.")
 
     async def view_all_expenses(self) -> None:
-        """Show what is currently saved on disk."""
         try:
             data = await self.storage.load()
         except StorageError as e:

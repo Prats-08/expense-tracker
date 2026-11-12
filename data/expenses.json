@@ -16,5 +16,29 @@
         "category": "Transport",
         "description": "bus to office",
         "date": "2026-11-1"
+    },
+    {
+        "amount": 1000.0,
+        "category": "Utilities",
+        "description": "electricity bill",
+        "date": "2026-11-11"
+    },
+    {
+        "amount": 6000.0,
+        "category": "Rent",
+        "description": "nov rent",
+        "date": "2026-11-01"
+    },
+    {
+        "amount": 300.0,
+        "category": "Entertainment",
+        "description": "movie",
+        "date": "2026-10-20"
+    },
+    {
+        "amount": 200.0,
+        "category": "Entertainment",
+        "description": "Netflix",
+        "date": "2026-11-01"
     }
 ]

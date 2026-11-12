@@ -26,10 +26,6 @@ class Report:
     def top_expenses(self, n: int = 5) -> list[Expense]:
         return sorted(self.expenses, key=lambda e: e.amount, reverse=True)[:n]
 
-    def for_month(self, year_month: str) -> "Report":
-        """Returns a new Report limited to one month, so calls can be chained."""
-        return Report([e for e in self.expenses if e.date.startswith(year_month)])
-
     def average_per_day(self) -> float:
         if not self.expenses:
             return 0.0
